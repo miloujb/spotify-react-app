@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What is this?
 
-An experiment using the Spotify API that shows the song being played by the user.
+An experiment using the Spotify API that fetches data relating to the song being played by the user.
 
 ### How do I use this?
 
