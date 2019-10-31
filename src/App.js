@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import hash from "./hash.js";
+import * as $ from "jquery";
+import { authEndpoint, clientId, redirectUri, scopes } from "./config";
+import hash from "./hash";
+import Player from "./Player";
 import logo from "./logo.svg";
 import "./App.css";
-import { authEndpoint, clientId, redirectUri, scopes } from "./config.js";
-import Player from "./Player";
-import * as $ from "jquery";
 
 class App extends Component {
   constructor() {
@@ -25,8 +25,11 @@ class App extends Component {
     this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
   }
   componentDidMount() {
+    // Set token
     let _token = hash.access_token;
+
     if (_token) {
+      // Set token
       this.setState({
         token: _token
       });
@@ -35,6 +38,7 @@ class App extends Component {
   }
 
   getCurrentlyPlaying(token) {
+    // Make a call using the token
     $.ajax({
       url: "https://api.spotify.com/v1/me/player",
       type: "GET",
@@ -51,6 +55,7 @@ class App extends Component {
       }
     });
   }
+
   render() {
     return (
       <div className="App">
@@ -59,11 +64,11 @@ class App extends Component {
           {!this.state.token && (
             <a
               className="btn btn--loginApp-link"
-              href={`${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+              href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
                 "%20"
               )}&response_type=token&show_dialog=true`}
             >
-              Log In
+              Login to Spotify
             </a>
           )}
           {this.state.token && (
@@ -78,4 +83,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
