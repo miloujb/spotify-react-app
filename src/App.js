@@ -62,7 +62,7 @@ class App extends Component {
         <header className="App-header">
           {!this.state.token && (
             <a
-              className="btn btn--loginApp-link"
+              className="login-link"
               href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
                 "%20"
               )}&response_type=token&show_dialog=true`}

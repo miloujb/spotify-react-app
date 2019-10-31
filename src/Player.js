@@ -11,7 +11,7 @@ const Player = props => {
 
   return (
     <div className="App">
-      <div className="main-wrapper">
+      <div className="spotify">
         <div className="now-playing__img">
           <img src={props.item.album.images[0].url} />
         </div>
