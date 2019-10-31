@@ -1,40 +1,40 @@
 .spotify {
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .now-playing__name {
   font-size: 1.5em;
   margin-bottom: 0.2em;
-  align-items: center;
+  text-align: center;
   justify-content: center;
 }
 .now-playing__artist {
   margin-bottom: 1em;
-  align-items: center;
+  text-align: center;
   justify-content: center;
 }
 .now-playing__status {
   margin-bottom: 1em;
-  align-items: center;
+  text-align: center;
   justify-content: center;
 }
 .now-playing__img {
-  float: left;
-  margin-right: 10px;
+  margin-left: 170px;
   text-align: center;
   width: 45%;
-  align-self: center;
+  align-items: center;
   justify-content: center;
 }
 .now-playing__img img {
   max-width: 80vmin;
   width: 100%;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 .now-playing__side {
-  margin-left: 5%;
+  margin-left: 25%;
   width: 45%;
   align-items: center;
   justify-content: center;
